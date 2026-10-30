@@ -1,0 +1,17 @@
+[package]
+name = "agent-add-helper-workflow"
+version = "0.1.1"
+edition = "2021"
+description = "Add Helper workflow agent launcher, review gates, and JSON-contract drift checks for Basalt"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+basalt-plugin-sdk = { git = "https://github.com/adevcorn/basalt-plugin-sdk", tag = "v0.1.4" }
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true
+codegen-units = 1
